@@ -1,0 +1,50 @@
+Name
+Name,Image
+Name,Image,Model of interior
+Name,Image,Model of interior,Diameter(km)
+Name,Image,Model of interior,Diameter(km),Mass(kg)
+Name,Image,Model of interior,Diameter(km),Mass(kg),Density(g/cm3)
+Name,Image,Model of interior,Diameter(km),Mass(kg),Density(g/cm3),Semi-major axis(km)[20]
+Name,Image,Model of interior,Diameter(km),Mass(kg),Density(g/cm3),Semi-major axis(km)[20],Orbital period (days)[21] (relative to Io)
+Name,Image,Model of interior,Diameter(km),Mass(kg),Density(g/cm3),Semi-major axis(km)[20],Orbital period (days)[21] (relative to Io),Inclination(°)[22]
+Name,Image,Model of interior,Diameter(km),Mass(kg),Density(g/cm3),Semi-major axis(km)[20],Orbital period (days)[21] (relative to Io),Inclination(°)[22],Eccentricity
+Io Jupiter I
+Io Jupiter I,
+Io Jupiter I,,
+Io Jupiter I,,,3660.0× 3637.4× 3630.6
+Io Jupiter I,,,3660.0× 3637.4× 3630.6,8.93×1022
+Io Jupiter I,,,3660.0× 3637.4× 3630.6,8.93×1022,3.528
+Io Jupiter I,,,3660.0× 3637.4× 3630.6,8.93×1022,3.528,421800
+Io Jupiter I,,,3660.0× 3637.4× 3630.6,8.93×1022,3.528,421800,1.769 (1)
+Io Jupiter I,,,3660.0× 3637.4× 3630.6,8.93×1022,3.528,421800,1.769 (1),0.050
+Io Jupiter I,,,3660.0× 3637.4× 3630.6,8.93×1022,3.528,421800,1.769 (1),0.050,0.0041
+Europa Jupiter II
+Europa Jupiter II,
+Europa Jupiter II,,
+Europa Jupiter II,,,3121.6
+Europa Jupiter II,,,3121.6,4.8×1022
+Europa Jupiter II,,,3121.6,4.8×1022,3.014
+Europa Jupiter II,,,3121.6,4.8×1022,3.014,671100
+Europa Jupiter II,,,3121.6,4.8×1022,3.014,671100,3.551 (2.0)
+Europa Jupiter II,,,3121.6,4.8×1022,3.014,671100,3.551 (2.0),0.471
+Europa Jupiter II,,,3121.6,4.8×1022,3.014,671100,3.551 (2.0),0.471,0.0094
+Ganymede Jupiter III
+Ganymede Jupiter III,
+Ganymede Jupiter III,,
+Ganymede Jupiter III,,,5268.2
+Ganymede Jupiter III,,,5268.2,1.48×1023
+Ganymede Jupiter III,,,5268.2,1.48×1023,1.942
+Ganymede Jupiter III,,,5268.2,1.48×1023,1.942,1070400
+Ganymede Jupiter III,,,5268.2,1.48×1023,1.942,1070400,7.155 (4.0)
+Ganymede Jupiter III,,,5268.2,1.48×1023,1.942,1070400,7.155 (4.0),0.204
+Ganymede Jupiter III,,,5268.2,1.48×1023,1.942,1070400,7.155 (4.0),0.204,0.0011
+Callisto Jupiter IV
+Callisto Jupiter IV,
+Callisto Jupiter IV,,
+Callisto Jupiter IV,,,4820.6
+Callisto Jupiter IV,,,4820.6,1.08×1023
+Callisto Jupiter IV,,,4820.6,1.08×1023,1.834
+Callisto Jupiter IV,,,4820.6,1.08×1023,1.834,1882700
+Callisto Jupiter IV,,,4820.6,1.08×1023,1.834,1882700,16.69 (9.4)
+Callisto Jupiter IV,,,4820.6,1.08×1023,1.834,1882700,16.69 (9.4),0.205
+Callisto Jupiter IV,,,4820.6,1.08×1023,1.834,1882700,16.69 (9.4),0.205,0.0074
