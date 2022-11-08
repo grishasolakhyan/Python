@@ -1,8 +1,9 @@
 import math
-a=float(input("ВВЕДИТЕ КАТЕТ а="))
-b=float(input('ВВЕДИТЕ КАТЕТ b='))
+print("<TASK №2-1>")
+a=float(input("ENTER LEG A="))
+b=float(input('ENTER LEG B='))
 
 def gip(a, b):
     return (math.sqrt(a**2+b**2))
 g=gip(a, b)
-print("ГИПОТЕНУЗА c=", g, sep="")
+print("HYPOTENUSE C=", g, sep="")

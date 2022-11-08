@@ -1,5 +1,4 @@
-#ЗАДАНИЕ 2
-print("ЗАДАНИЕ №2")
+print("TASK №1-2")
 spisok = []
 word = 0
 ending = 0
@@ -8,7 +7,7 @@ last_word = 0
 while True:
 	word = input()
 	if word == 'end':
-		print("СПИСОК СЛОВ:", spisok, sep="")
+		print("WORD LIST:", spisok, sep="")
 		break
 	else:
 		spisok.append(word)

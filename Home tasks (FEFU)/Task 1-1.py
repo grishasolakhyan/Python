@@ -1,20 +1,19 @@
-#ЗАДАНИЕ 1
-print("ЗАДАНИЕ №1")
 import random
+print("<TASK №1-1>")
 a=[]
 for i in range(10):
     a.append(random.randint(-10,10))
-print("СПИСОК:",a)
+print("LIST:",a)
 sum=0
 for i in a:
     sum+=i
-print("СУММА=", sum)
+print("SUM=", sum)
 Minimum=min(a)
 Maximum=max(a)
-print("МИНИМУМ=",Minimum, sep="")
-print("МАКСИМУМ=",Maximum, sep="")
+print("MIN=",Minimum, sep="")
+print("MAX=",Maximum, sep="")
 k=0
 for x in a:
     if x<0:
         k=k+1
-print("КОЛИЧЕСТВО ОТРИЦАТЕЛЬНЫХ ЧИСЕЛ=",k,sep="")
+print("NUMBER OF NEGATIVE NUMBERS=",k,sep="")

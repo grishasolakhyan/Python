@@ -1,10 +1,11 @@
 import math
+print("<TASK №4-2>")
 class LoopErr(Exception): pass
 eps=1e-3
 a=0
 s=0
 imax=1000
-x=int(input("ВВЕДИТЕ X: "))
+x=int(input("ENTER X: "))
 a=x
 s=a
 
@@ -18,7 +19,7 @@ try:
         s+=a
         i+=1
 except LoopErr:
-    print("ОШИБКА")
+    print("ERROR")
 else:
     print("S = ", s)
     sinx=math.sin(x)

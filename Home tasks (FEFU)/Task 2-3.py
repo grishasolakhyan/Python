@@ -1,4 +1,5 @@
 import random
+print("<TASK №2-3>")
 n=9
 f=[n]
 for i in range(n):

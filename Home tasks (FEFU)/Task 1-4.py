@@ -1,5 +1,5 @@
-#ЗАДАНИЕ 4
-n=int(input("ВВЕДИТЕ РАЗМЕРНОСТЬ СПИСКА:"))
+print("<TASK №1-4>")
+n=int(input("ENTER LIST DIMENSION:"))
 M=[ [0]*n for i in range(n) ]
 for i in range(n):
     for j in range(n):

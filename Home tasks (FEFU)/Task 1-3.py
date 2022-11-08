@@ -1,6 +1,5 @@
-#ЗАДАНИЕ 3
-import random 
-print("ЗАДАНИЕ №3")
+import random
+print("<TASK №1-3>")
 f=[]
 for i in range(100):
     f.append(random.randint(-10,10))
@@ -12,7 +11,7 @@ for x in range(0,10):
 print("\n")
 u=[]
 u=f[4:100:5]
-print("КАЖДЫЙ ПЯТЫЙ ЭЛЕМЕНТ СПИСКА:",u, sep="")
+print("EVERY 5TH ELEMENT OF LIST:",u, sep="")
 print("\n")
 for y in range(len(f)):
 	if f[y] % 2 != 0:

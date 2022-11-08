@@ -1,23 +1,19 @@
+print("<TASK №4-1>")
 a=['a','b','c','d','e','f']
-#МЕТОД INDEX()
-
 print(a)
 while True:
     try:
-        k=str(input("ВВЕДИТЕ СИМВОЛ ИЗ СПИСКА: "))
+        k=str(input("ENTER A CHARACTER FROM THE LIST: "))
         x=a.index(k)
         break;
     except ValueError:
-        print("ТАКОГО СИМВОЛА НЕТ! ПОВТОРИТЕ ПОПЫТКУ")
+        print("THERE IS NO SUCH SYMBOL! TRY AGAIN")
 print(x)
-
-#ОПЕРАЦИЯ ИНДЕКСИРОВАНИЯ []
-
 while True:
     try:
-        m=int(input("ВВЕДИТЕ ИНДЕКС: "))
-        r=a[m-1]
+        m=int(input("ENTER INDEX: "))
+        r=a[m]
         break;
     except IndexError:
-        print("ИНДЕКС ЭЛЕМЕНТА НЕ НАЙДЕН")
+        print("ELEMENT INDEX NOT FOUND")
 print(r)

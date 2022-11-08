@@ -1,10 +1,11 @@
+print("<TASK №5>")
 class geom_shape:
     def __init__(self,thick_line,color_line,color_shape):
         self.__thick_line=thick_line
         self.__color_line=color_line
         self.__color_shape=color_shape
     def __str__(self):
-        inf = "ИНФОРМАЦИЯ О ГЕОРМЕТРИЧЕСКОЙ ФИГУРЕ: " + str(self.__thick_line) + "," + str(self.__color_line) + "," + str(self.__color_shape)
+        inf = "INFORMATION ABOUT THE GEOMETRIC FIGURE: " + str(self.__thick_line) + "," + str(self.__color_line) + "," + str(self.__color_shape)
         return inf
     @property
     def thick_line_det(self):
@@ -14,7 +15,7 @@ class geom_shape:
         if (x>0):
             self.__thick_line=x
         else:
-            raise ValueError("ЗНАЧЕНИЕ МЕНЬШЕ НУЛЯ")
+            raise ValueError("VALUE LESS THAN ZERO")
     @property
     def color_line_det(self):
         return self.__color_line
@@ -36,7 +37,7 @@ class circle(geom_shape):
         s = 3.1415926535*self.__radius**2
         return s
     def __str__(self):
-        inf = super().__str__() + ". РАДИУС КРУГА: " + str(self.__radius)
+        inf = super().__str__() + ". CIRCLE RADIUS: " + str(self.__radius)
         return inf
     @property
     def radius_det(self):
@@ -46,7 +47,7 @@ class circle(geom_shape):
         if (x>0):
             self.__radius=x
         else:
-            raise ValueError("ЗНАЧЕНИЕ МЕНЬШЕ НУЛЯ")
+            raise ValueError("VALUE LESS THAN ZERO")
 
 class rectangle(geom_shape):
     def __init__(self,thick_line,color_line,color_shape,side1,side2):
@@ -57,7 +58,7 @@ class rectangle(geom_shape):
         s = self.__side1*self.__side2
         return s
     def __str__(self):
-        inf = super().__str__() + ". СТОРОНЫ ПРЯМОУГОЛЬНИКА: " + str(self.__side1) + "," + str(self.__side2)
+        inf = super().__str__() + ". SIDES OF A RECTANGLE: " + str(self.__side1) + "," + str(self.__side2)
         return inf
     @property
     def side1_det(self):
@@ -67,7 +68,7 @@ class rectangle(geom_shape):
         if (x>0):
             self.__side1=x
         else:
-            raise ValueError("ЗНАЧЕНИЕ МЕНЬШЕ НУЛЯ")
+            raise ValueError("VALUE LESS THAN ZERO")
     @property
     def side2_det(self):
         return self.__side2
@@ -76,7 +77,7 @@ class rectangle(geom_shape):
         if (x>0):
             self.__side2=x
         else:
-            raise ValueError("ЗНАЧЕНИЕ МЕНЬШЕ НУЛЯ")
+            raise ValueError("VALUE LESS THAN ZERO")
 
 class triangle(geom_shape):
     def __init__(self,thick_line,color_line,color_shape,base,height):
@@ -87,7 +88,7 @@ class triangle(geom_shape):
         s = self.__base*self.__height*0.5
         return s
     def __str__(self):
-        inf = super().__str__() + ". ОСНОВАНИЕ ТРЕУГОЛЬНИКА И ВЫСОТА: " + str(self.__base) + "," + str(self.__height)
+        inf = super().__str__() + ". TRIANGLE BASE AND HEIGHT: " + str(self.__base) + "," + str(self.__height)
         return inf
     @property
     def base_det(self):
@@ -97,7 +98,7 @@ class triangle(geom_shape):
         if (x>0):
             self.__base=x
         else:
-            raise ValueError("ЗНАЧЕНИЕ МЕНЬШЕ НУЛЯ")
+            raise ValueError("VALUE LESS THAN ZERO")
     @property
     def height_det(self):
         return self.__height
@@ -106,34 +107,34 @@ class triangle(geom_shape):
         if (x>0):
             self.__height=x
         else:
-            raise ValueError("ЗНАЧЕНИЕ МЕНЬШЕ НУЛЯ")
+            raise ValueError("VALUE LESS THAN ZERO")
 
 #ГЕОМЕРИЧЕСКАЯ ФИГУРА
 
-a=geom_shape(21,"КРАСНЫЙ","ЧЕРНЫЙ")
+a=geom_shape(21,"RED","BLACK")
 print(a)
 a.thick_line_det=12
 print(a.thick_line_det)
-a.color_line_det="СИНИЙ"
+a.color_line_det="BLUE"
 print(a.color_line_det)
-a.color_shape_det="БЕЛЫЙ"
+a.color_shape_det="WHITE"
 print(a.color_shape_det)
 
 #КРУГ
 
-b=circle(21,"БЕЛЫЙ","ЧЕРНЫЙ",150)
+b=circle(21,"WHITE","BLACK",150)
 print("\n")
 print(b)
-print("ПЛОЩАДЬ ТРЕУГОЛЬНИКА: ", b.s())
+print("AREA OF A TRIANGLE: ", b.s())
 b.radius_det=100
 print(b.radius_det)
 
 #ПРЯМОУГОЛЬНИК
 
-c=rectangle(21,"ЧЕРНЫЙ","БЕЛЫЙ",400,200)
+c=rectangle(21,"BLACK","WHITE",400,200)
 print("\n")
 print(c)
-print("ПЛОЩАДЬ ПРЯМОУГОЛЬНИКА: ", c.s())
+print("AREA OF THE RECTANGLE: ", c.s())
 c.side1_det = 300
 c.side2_det = 100
 print(c.side1_det)
@@ -141,10 +142,10 @@ print(c.side2_det)
 
 #ТРЕУГОЛЬНИК
 
-d=triangle(21,"РОЗОВЫЙ","ЧЕРНЫЙ",100,200)
+d=triangle(21,"PINK","BLACK",100,200)
 print("\n")
 print(d)
-print("ПЛОЩАДЬ ТРЕУГЛЬНИКА: ", d.s())
+print("AREA OF A TRIANGLE: ", d.s())
 d.base_det=50
 d.height_det=100
 print(d.base_det)
