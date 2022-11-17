@@ -1,10 +1,14 @@
+import numpy as np;
+import matplotlib.pyplot as plt
+import math
+
 n=50;
 oX1=-2;
-oX2=20;
+oX2=1;
 x=1;
 
 def func (x):
-    return 2*x*x-3
+    return 2*x-3+x**3
 
 def rectangle(oX1, oX2, n):
     h=(oX2-oX1)/n
@@ -46,3 +50,8 @@ print ("\nМЕТОД ТРАПЕЦИЙ")
 print ("I = ", trapezium(oX1, oX2, n))
 print ("\nМЕТОД СИМПСОНА")
 print ("I = ", Simpson(oX1, oX2, n))
+
+t=np.arange(oX1, oX2, 0.1)
+y=func(t)
+plt.plot(t, y)
+plt.show()
