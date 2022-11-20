@@ -3,12 +3,9 @@ import matplotlib.pyplot as plt
 import math
 
 n=20;
-oX1=-1;
-oX2=1;
+oX1=-10;
+oX2=10;
 x=1;
-
-#def func2 (x):
-#    return 2*x*x+x+5
 
 def func (fun_st, x):
     fun=eval(fun_st)
@@ -51,14 +48,23 @@ fun_st = input('Введите уравнение функции f(x) = ')
 print ("Левая граница = ", oX1, sep='')
 print ("Правая граница = ", oX2, sep='')
 print ("Число разбиений = ", n, sep='')
+
 print ("\nМЕТОД ПРЯМОУГОЛЬНИКОВ")
-print ("I = ", rectangle(oX1, oX2, n))
+print ("I = ", round(rectangle(oX1, oX2, n), 6))
 print ("\nМЕТОД ТРАПЕЦИЙ")
-print ("I = ", trapezium(oX1, oX2, n))
+print ("I = ", round(trapezium(oX1, oX2, n), 6))
 print ("\nМЕТОД СИМПСОНА")
-print ("I = ", Simpson(oX1, oX2, n))
+print ("I = ", round(Simpson(oX1, oX2, n), 6))
+
+fig = plt.figure()
+fig.patch.set_facecolor('#4a5b67')
+fig.patch.set_alpha(1)
+
+ax = fig.add_subplot(111)
+ax.patch.set_alpha(0.0)
 
 t=np.arange(oX1, oX2, 0.1)
 y=func(fun_st, t)
-plt.plot(t, y)
+plt.plot(t, y, color='#ffa1c0')
+plt.fill_between(t, y, np.zeros_like(y), color='#bd305b')
 plt.show()
