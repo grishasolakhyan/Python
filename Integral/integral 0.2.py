@@ -3,14 +3,13 @@ import matplotlib.pyplot as plt
 import math
 
 n=20;
-oX1=-10;
-oX2=10;
+oX1=0;
+oX2=100;
 x=1;
 
 def func (fun_st, x):
     fun=eval(fun_st)
     return fun
-
 def rectangle(oX1, oX2, n):
     h=(oX2-oX1)/n
     sum=0
@@ -19,7 +18,6 @@ def rectangle(oX1, oX2, n):
         sum+=func(fun_st, btx)
         btx+=h
     return sum*h
-
 def trapezium(oX1, oX2, n):
     h=(oX2-oX1)/n
     btx=oX1+h
@@ -28,7 +26,6 @@ def trapezium(oX1, oX2, n):
         sum+=func(fun_st, btx)
         btx+=h
     return sum*h
-
 def Simpson(oX1, oX2, n):
     btx=oX1
     h=(oX2-oX1)/n
