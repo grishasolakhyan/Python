@@ -4,8 +4,7 @@ import math
 
 n=20;
 oX1=0;
-oX2=100;
-x=1;
+oX2=10;
 
 def func (fun_st, x):
     fun=eval(fun_st)
@@ -39,8 +38,11 @@ def Simpson(oX1, oX2, n):
     sum=(h/3)*(sum+4*sum1+2*sum2)
     return sum
 
+
+
+
+
 fun_st = input('Введите уравнение функции f(x) = ')
-#print(func (fun_st))
 
 print ("Левая граница = ", oX1, sep='')
 print ("Правая граница = ", oX2, sep='')
@@ -52,6 +54,9 @@ print ("\nМЕТОД ТРАПЕЦИЙ")
 print ("I = ", round(trapezium(oX1, oX2, n), 6))
 print ("\nМЕТОД СИМПСОНА")
 print ("I = ", round(Simpson(oX1, oX2, n), 6))
+
+
+
 
 fig = plt.figure()
 fig.patch.set_facecolor('#4a5b67')
