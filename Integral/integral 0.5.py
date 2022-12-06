@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
         self.bord_b.setObjectName("bord_b")
 
         self.num_seg = QtWidgets.QSlider(self.centralwidget)
-        min_seg=1
+        min_seg=2
         max_seg=100
 
         self.num_seg.setGeometry(QtCore.QRect(770, 130, 150, 22))
@@ -136,8 +136,9 @@ class Ui_MainWindow(object):
         return ev
 
     def int_boards(self):
-        xa = int(self.bord_a.toPlainText())
-        xb = int(self.bord_b.toPlainText())
+        xa = float(self.bord_a.toPlainText())
+        xb = float(self.bord_b.toPlainText())
+
         if xa>xb:
             xbn=xb
             xb=xa
@@ -217,6 +218,7 @@ class Ui_MainWindow(object):
         y=self.func(t)
         plt.plot(t, y, color='#ffa1c0')
         plt.fill_between(t, y, np.zeros_like(y), color='#bd305b')
+        plt.grid()
         plt.show()
 
 
