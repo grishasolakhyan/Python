@@ -1,4 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 import numpy as np;
 import matplotlib.pyplot as plt
 import math
@@ -6,7 +7,8 @@ import math
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1200, 600)
+        #MainWindow.resize(1200, 600)
+        MainWindow.setFixedSize(1100, 600)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -128,25 +130,50 @@ class Ui_MainWindow(object):
 
 
 
+    def empty_boards(self, st_bo):
+        return bool(st_bo and not st_bo.isspace())
 
+    def empty_equation(self, st_eq):
+        return bool(st_eq and not st_eq.isspace())
 
     def func(self, x):
         equa = self.equation.toPlainText()
-        ev=eval(equa)
-        return ev
+        if self.empty_equation(equa) == False: #Проверка пустой строки для уравнения (исправление проблем v. 0.5.1)
+            error = QMessageBox()
+            error.setObjectName("Error")
+            error.setText("Не указано уравнение")
+            error.setIcon(QMessageBox.Warning)
+            error.setStandardButtons(QMessageBox.Ok)
+            error.exec_()
+            return False
+        else:
+            ev=eval(equa)
+            return ev
 
     def int_boards(self):
-        xa = float(self.bord_a.toPlainText())
-        xb = float(self.bord_b.toPlainText())
+        xas = self.bord_a.toPlainText()
+        xbs = self.bord_b.toPlainText()
 
-        if xa>xb:
-            xbn=xb
-            xb=xa
-            xa=xbn
-        return xa, xb
+        xas = xas.replace(",", ".") #Замена запятой на точку в значении левой границы интеграла (исправление проблем v. 0.5.1)
+        xbs = xbs.replace(",", ".") #Замена запятой на точку в значении правой границы интеграла (исправление проблем v. 0.5.1)
 
-    def write_result(self):
-        tx = self.equation.toPlainText()
+        if self.empty_boards(xas) == False or self.empty_boards(xbs) == False: #Проверка пустых строк для границ интеграла (исправление проблем v. 0.5.1)
+            error = QMessageBox()
+            error.setObjectName("Error")
+            error.setText("Не указаны все границы интеграла")
+            error.setIcon(QMessageBox.Warning)
+            error.setStandardButtons(QMessageBox.Ok)
+            error.exec_()
+            return False
+        else:
+            xa = float(xas)
+            xb = float(xbs)
+
+            if xa>xb:
+                xbn=xb
+                xb=xa
+                xa=xbn
+            return xa, xb
 
     def update_NumSeg(self):
         self.text_seg.setText(str(self.num_seg.value()))
@@ -154,54 +181,73 @@ class Ui_MainWindow(object):
         return val
 
     def rectangle(self):
-        xa, xb = self.int_boards()
-        n = self.update_NumSeg()
-        sum = 0
-        h = (xb - xa) / n
-        btx = xa + h/2
-        while(btx < xb):
-            sum += self.func(btx)
-            btx += h
-        return sum * h
+        if self.func(self)==False:
+            return 0
+        else:
+            if self.int_boards()==False:
+                return 0
+            else:
+                xa, xb = self.int_boards()
+                n = self.update_NumSeg()
+                sum = 0
+                h = (xb - xa) / n
+                btx = xa + h/2
+                while(btx < xb):
+                    sum += self.func(btx)
+                    btx += h
+                return sum * h
 
     def trapezium(self):
-        xa, xb = self.int_boards()
-        n = self.update_NumSeg()
-        sum = 0
-        h = (xb - xa) / n
-        btx = xa+h
-        sum = (self.func(xa)+self.func(xb))/2
-        for i in range (1, n):
-            sum += self.func(btx)
-            btx += h
-        return sum * h
+        if self.func(self)==False:
+            return 0
+        else:
+            if self.int_boards()==False:
+                return 0
+            else:
+                xa, xb = self.int_boards()
+                n = self.update_NumSeg()
+                sum = 0
+                h = (xb - xa) / n
+                btx = xa+h
+                sum = (self.func(xa)+self.func(xb))/2
+                for i in range (1, n):
+                    sum += self.func(btx)
+                    btx += h
+                return sum * h
 
     def Simpson(self):
-        xa, xb = self.int_boards()
-        n = self.update_NumSeg()
-        sum=0
-        btx = xa
-        h = (xb - xa) / n
-        sum = self.func(xa)+self.func(xb)
-        sum1 = 0
-        sum2 = 0
-        for i in range (1, n, 2):
-            sum1 += self.func(btx + i * h)
-        for i in range (2, n, 2):
-            sum2 += self.func(btx + i * h)
-        sum = (h / 3) * (sum + 4 * sum1 + 2 * sum2)
-        return sum
+        if self.func(self)==False:
+            return 0
+        else:
+            if self.int_boards()==False:
+                return 0
+            else:
+                xa, xb = self.int_boards()
+                n = self.update_NumSeg()
+                sum=0
+                btx = xa
+                h = (xb - xa) / n
+                sum = self.func(xa)+self.func(xb)
+                sum1 = 0
+                sum2 = 0
+                for i in range (1, n, 2):
+                    sum1 += self.func(btx + i * h)
+                for i in range (2, n, 2):
+                    sum2 += self.func(btx + i * h)
+                sum = (h / 3) * (sum + 4 * sum1 + 2 * sum2)
+                return sum
 
     def Integral(self):
         r_res = self.rectangle()
         t_res = self.trapezium()
         s_res = self.Simpson()
-
-        self.result_rect.setText(str(r_res))
-        self.result_trap.setText(str(t_res))
-        self.result_Simp.setText(str(s_res))
-
-        return 0
+        if r_res == 0 or t_res == 0 or s_res == 0:
+            return 0
+        else:
+            self.result_rect.setText(str(r_res))
+            self.result_trap.setText(str(t_res))
+            self.result_Simp.setText(str(s_res))
+            return 0
 
     def draw_graph(self):
         xa, xb = self.int_boards()
@@ -214,7 +260,7 @@ class Ui_MainWindow(object):
         ax = fig.add_subplot(111)
         ax.patch.set_alpha(0.0)
 
-        t=np.arange(xa, xb, 0.2)
+        t=np.arange(xa, xb, 0.1)
         y=self.func(t)
         plt.plot(t, y, color='#ffa1c0')
         plt.fill_between(t, y, np.zeros_like(y), color='#bd305b')
