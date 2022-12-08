@@ -9,6 +9,7 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet("background-color: rgb(35, 42, 57);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.label_result = QtWidgets.QLabel(self.centralwidget)
         self.label_result.setGeometry(QtCore.QRect(0, 0, 400, 40))
         font = QtGui.QFont()
