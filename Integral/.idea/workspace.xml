@@ -39,7 +39,7 @@
       <recent name="D:\Code\Repos\Python\Integral" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.integral 0.5.2">
+  <component name="RunManager" selected="Python.integral 0.5">
     <configuration name="integral 0.1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Integral" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,9 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.integral 0.5.2" />
-        <item itemvalue="Python.integral 0.5.1" />
         <item itemvalue="Python.integral 0.5" />
+        <item itemvalue="Python.integral 0.5.1" />
+        <item itemvalue="Python.integral 0.5.2" />
         <item itemvalue="Python.integral 0.1" />
         <item itemvalue="Python.integral 0.2" />
       </list>
